@@ -1,0 +1,83 @@
+body {
+    background-color: #f8f4b2; /* Light yellow background */
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #ff6d60; /* Red background */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    background-color: #d1453b; /* Darker red */
+    padding: 10px;
+    text-align: left;
+}
+
+nav a {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    background-color: #fffacd; /* Pale yellow */
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid #d3d3d3;
+}
+
+h2 {
+    color: #333;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.buttons h\\:commandButton {
+    padding: 10px 20px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.buttons h\\:commandButton:hover {
+    background-color: #d3d3d3;
+}
+
+footer {
+    background-color: #ff6d60; /* Red background */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

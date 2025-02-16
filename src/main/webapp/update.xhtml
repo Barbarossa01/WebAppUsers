@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets">
+
+<h:head>
+    <title>Update User</title>
+    <h:outputStylesheet name="css/default.css" />
+                <a href="index.xhtml">Users list</a>
+            <a href="add.xhtml">Add new user</a>
+            <a href="edit.xhtml">Edit users</a>
+            
+</h:head>
+
+<h:body>
+    <h:form id="updateUserForm">
+        <h:panelGrid columns="2">
+            <h:outputLabel for="userIdInput" value="ID: " />
+            <h:inputHidden id="userIdInput" value="#{userManager.user.id}" />
+
+            <h:outputLabel for="userFirstNameInput" value="First name: " />
+            <h:inputText id="userFirstNameInput" value="#{userManager.user.first_name}" />
+
+            <h:outputLabel for="userLastNameInput" value="Last name: " />
+            <h:inputText id="userLastNameInput" value="#{userManager.user.last_name}" />
+
+            <h:outputLabel for="userYearOfStudyInput" value="Year of Study: " />
+            <h:inputText id="userYearOfStudyInput" value="#{userManager.user.year_of_study}" />
+
+            <h:outputLabel for="userEmailInput" value="Email: " />
+            <h:inputText id="userEmailInput" value="#{userManager.user.email}" />
+
+            <h:outputLabel for="userPersonalIdInput" value="Personal ID: " />
+            <h:inputText id="userPersonalIdInput" value="#{userManager.user.personal_id}" />
+
+            <h:outputLabel for="userCountryInput" value="Country: " />
+            <h:inputText id="userCountryInput" value="#{userManager.user.country}" />
+
+            <h:commandButton value="Update" action="#{userManager.updateUser}" />
+            <h:commandButton value="Cancel" immediate="true" action="index.xhtml?faces-redirect=true" />
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>

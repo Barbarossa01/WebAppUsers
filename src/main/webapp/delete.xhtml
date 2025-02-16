@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:f="jakarta.faces.core"
+ xmlns:jsf="jakarta.faces"
+ xmlns:h="jakarta.faces.html"
+ xmlns:ui="jakarta.faces.facelets">
+<ui:composition template="template.xhtml">
+	<ui:define name="header">
+	    Delete users
+	</ui:define>
+	<ui:define name="content">
+        <h:form id="deleteUserForm">
+            <ui:repeat value="#{userManager.users}" var="user">
+                <p>
+                    <h:commandLink id="deleteUser"
+                                    action="#{userManager.deleteUser(user.id)}"
+                                    value="Delete #{user.last_name} #{user.first_name}"
+                                    immediate="true">
+                    </h:commandLink>
+                </p>
+            </ui:repeat>
+        </h:form>
+    </ui:define>
+	<ui:define name="footer">
+	    
+	</ui:define>
+</ui:composition>
+</html>

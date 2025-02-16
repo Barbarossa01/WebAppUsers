@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:h="jakarta.faces.html" xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>Users List</title>
+        <h:outputStylesheet name="css/default.css" />
+
+    </h:head>
+    <h:body>
+
+        <ui:composition template="template.xhtml">
+            <ui:define name="htmlTitle">Users List</ui:define>
+            <ui:define name="pageHeader">Users List</ui:define>
+
+            <ui:define name="content">
+                <h:dataTable var="user" value="#{userManager.users}" summary="List of all users" rules="all" cellpadding="5">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="User" />
+                        </f:facet>
+                        <h:outputText value="#{user.first_name} #{user.last_name}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Year of study" />
+                        </f:facet>
+                        <h:outputText value="#{user.year_of_study}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Email" />
+                        </f:facet>
+                        <h:outputText value="#{user.email}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Personal ID" />
+                        </f:facet>
+                        <h:outputText value="#{user.personal_id}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Country" />
+                        </f:facet>
+                        <h:outputText value="#{user.country}" />
+                    </h:column>
+                </h:dataTable>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

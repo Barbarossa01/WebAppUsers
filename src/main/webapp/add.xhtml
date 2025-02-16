@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:f="jakarta.faces.core"
+      xmlns:jsf="jakarta.faces"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets">
+<ui:composition template="template.xhtml">
+    <ui:define name="pageHeader">
+        Add new user
+    </ui:define>
+    <ui:define name="content">
+        <h:form id="addUserForm">
+            <h:panelGrid id="userGrid" columns="3">
+                <h:outputLabel for="userFirstNameInput" value="First name: " />
+                <h:inputText id="userFirstNameInput"
+                             value="#{userManager.user.first_name}"
+                             required="true" 
+                             label="First name" />
+                <h:message for="userFirstNameInput" styleClass="error-message" />
+
+                <h:outputLabel for="userLastNameInput" value="Last name: " />
+                <h:inputText id="userLastNameInput"
+                             value="#{userManager.user.last_name}" 
+                             required="true"
+                             label="Last name"/>
+                <h:message for="userLastNameInput" styleClass="error-message" />
+
+                <h:outputLabel for="userYearOfStudyInput" value="Year of study: " />
+                <h:inputText id="userYearOfStudyInput"
+                             value="#{userManager.user.year_of_study}"
+                             required="true"
+                             label="Year of study">
+                    <f:validateLongRange minimum="1" maximum="5"/>
+                </h:inputText>
+                <h:message for="userYearOfStudyInput" styleClass="error-message" />
+
+                <h:outputLabel for="userEmailInput" value="Email: " />
+                <h:inputText id="userEmailInput"
+                             value="#{userManager.user.email}"
+                             required="true"
+                             label="Email">
+                    <f:validateLength minimum="6" />
+                    <f:validateRegex pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" />
+                </h:inputText>
+                <h:message for="userEmailInput" styleClass="error-message" />
+
+                <h:outputLabel for="userPersonalIdInput" value="Personal ID: " />
+                <h:inputText id="userPersonalIdInput"
+                             value="#{userManager.user.personal_id}"
+                             required="true"
+                             label="Personal ID">
+                    <f:convertNumber converterId="jakarta.faces.Long" pattern="00000000000"/>
+                </h:inputText>
+                <h:message for="userPersonalIdInput" styleClass="error-message" />
+
+                <h:outputLabel for="userCountryInput" value="Country: " />
+                <h:inputText id="userCountryInput"
+                             value="#{userManager.user.country}"
+                             required="true"
+                             label="Country"/>
+                <h:message for="userCountryInput" styleClass="error-message" />
+
+                <f:facet name="footer">
+                    <tr>
+                        <td colspan="2">
+                            <h:commandButton value="Save" action="#{userManager.saveUser}" />
+                        </td>
+                        <td>
+                            <h:message for="createUserButton" />
+                        </td>
+                    </tr>
+                </f:facet>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+    <ui:define name="footer">
+    </ui:define>
+</ui:composition>
+</html>

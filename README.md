@@ -64,8 +64,8 @@ Ensure you have the following installed:
 ### 🔧 Installation Steps
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/java-admin-panel.git
-    cd java-admin-panel
+    git clone https://github.com/Barbarossa/WebAppUsers.git
+    cd WebAppUsers
     ```
 
 2. **Configure Database**:
